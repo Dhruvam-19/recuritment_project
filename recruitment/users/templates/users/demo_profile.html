@@ -1,0 +1,12 @@
+{% extends "users/home.html" %}
+{% load crispy_forms_tags %}
+
+{% block body %}
+  <form method="post" enctype="multipart/form-data" action="{% url 'profile' %}">
+    {% csrf_token %}
+      {% crispy form %}
+    <br>
+
+    <br>
+  </form>
+{% endblock %}

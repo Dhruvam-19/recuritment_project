@@ -1,4 +1,161 @@
-{% extends 'users/home.html' %}
+{% extends "users/home.html" %}
+{% load crispy_forms_tags %}
+
 {% block body %}
-    <h1>{{ user.username }} </h1>
+  <form method="post" enctype="multipart/form-data" action="{% url 'profile' %}">
+    {% csrf_token %}
+    <p><u><strong>Personal Details</strong></u></p>
+    <div class="form-row">
+      <div class="form-group col-md-12 mb-0">
+          {{ form.image.errors }}
+          {{ form.image|as_crispy_field }}
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-4 mb-0">
+        {{ form.first_name.errors }}
+        {{ form.first_name|as_crispy_field }}
+      </div>
+      <div class="form-group col-md-4 mb-0">
+        {{ form.middle_name.errors }}
+        {{ form.middle_name|as_crispy_field }}
+      </div>
+      <div class="form-group col-md-4 mb-0">
+        {{ form.last_name.errors }}
+        {{ form.last_name|as_crispy_field }}
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-4 mb-0">
+        {{ form.father_first_name.errors }}
+        {{ form.father_first_name|as_crispy_field }}
+      </div>
+      <div class="form-group col-md-4 mb-0">
+        {{ form.father_middle_name.errors }}
+        {{ form.father_middle_name|as_crispy_field }}
+      </div>
+      <div class="form-group col-md-4 mb-0">
+        {{ form.father_last_name.errors }}
+        {{ form.father_last_name|as_crispy_field }}
+      </div>
+      <div class="form-group col-md-4 mb-0">
+        {{ form.date_of_birth.errors }}
+        {{ form.date_of_birth|as_crispy_field }}
+      </div>
+      <div class="form-group col-md-4 mb-0">
+        {{ form.joining_date.errors }}
+        {{ form.joining_date|as_crispy_field }}
+      </div>
+      <div class="form-group col-md-4 mb-0">
+        {{ form.resignation_date.errors }}
+        {{ form.resignation_date|as_crispy_field }}
+      </div>
+        <div class="form-group col-md-4 mb-0">
+          {{ form.adharcard_number.errors }}
+          {{ form.adharcard_number|as_crispy_field }}
+      </div>
+        <div class="form-group col-md-4 mb-0">
+          {{ form.pan_number.errors }}
+          {{ form.pan_number|as_crispy_field }}
+       </div>
+
+
+    </div>
+
+    <p><u><strong>Contact Details</strong></u></p>
+    <div class="form-row">
+
+      <div class="form-group col-md-4 mb-0">
+        {{ form.email.errors }}
+        {{ form.email|as_crispy_field }}
+      </div>
+      <div class="form-group col-md-4 mb-0">
+        {{ form.phone_number1.errors }}
+        {{ form.phone_number1|as_crispy_field }}
+      </div>
+      <div class="form-group col-md-4 mb-0">
+        {{ form.phone_number2.errors }}
+        {{ form.phone_number2|as_crispy_field }}
+      </div>
+
+    </div>
+
+    <p><u><strong>Address Details</strong></u></p>
+    {{ form.address_lane1.errors }}
+    {{ form.address_lane1|as_crispy_field }}
+    {{ form.address_lane2.errors }}
+    {{ form.address_lane2|as_crispy_field }}
+    {{ form.address_lane3.errors }}
+    {{ form.address_lane3|as_crispy_field }}
+    <div class="form-row">
+      <div class="form-group col-md-4 mb-0">
+        {{ form.country.errors }}
+        {{ form.country|as_crispy_field }}
+      </div>
+      <div class="form-group col-md-4 mb-0">
+        {{ form.state.errors }}
+        {{ form.state|as_crispy_field }}
+      </div>
+
+    </div>
+
+    <p><u><strong>Bank Details</strong></u></p>
+    <div class="form-row">
+      <div class="form-group col-md-4 mb-0">
+        {{ form.bank_name.errors }}
+        {{ form.bank_name|as_crispy_field }}
+      </div>
+      <div class="form-group col-md-4 mb-0">
+        {{ form.bank_branch.errors }}
+        {{ form.bank_branch|as_crispy_field }}
+      </div>
+      <div class="form-group col-md-4 mb-0">
+        {{ form.account_number.errors }}
+        {{ form.account_number|as_crispy_field }}
+      </div>
+      <div class="form-group col-md-4 mb-0">
+        {{ form.micr_code.errors }}
+        {{ form.micr_code|as_crispy_field }}
+      </div>
+      <div class="form-group col-md-4 mb-0">
+        {{ form.ifsc_code.errors }}
+        {{ form.ifsc_code|as_crispy_field }}
+      </div>
+    </div>
+
+    <p><u><strong>Business Details</strong></u></p>
+      <div class="form-row">
+        <div class="form-gorup col-md-4 mb-0">
+          {{ form.bd.errors }}
+          {{ form.bd|as_crispy_field }}
+        </div>
+        <div class="form-group col-md-4 mb-0">
+          {{ form.execution.errors }}
+          {{ form.execution|as_crispy_field }}
+        </div>
+      </div>
+
+    <p><u><strong>Document Details</strong></u></p>
+      <div class="form-row" >
+        <div class="form-group col-md-6 mb-0">
+          {{ form.agreement_document.errors }}
+          {{ form.agreement_document }}
+        </div>
+        <div class="form-gorup col-md-6 mb-0">
+          {{ form.document1.errors }}
+          {{ form.document1|as_crispy_field }}
+        </div>
+        <div class="form-group col-md-6 mb-0">
+          {{ form.document2.errors }}
+          {{ form.document2|as_crispy_field }}
+        </div>
+        <div class="form-group col-md-6 mb-0">
+          {{ form.document3.errors }}
+          {{ form.document3|as_crispy_field }}
+        </div>
+      </div>
+    <br>
+    <button type="submit" class="btn btn-primary mb-4">Sign in</button>
+    <br>
+  </form>
 {% endblock %}
