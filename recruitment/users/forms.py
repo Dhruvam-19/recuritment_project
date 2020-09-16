@@ -68,11 +68,11 @@ class profile_form(forms.ModelForm):
                 Column('document2',css_class='form-group col-md-6 mb-0'),
                 Column('document3',css_class='form-group col-md-46 mb-0'),
                 css_class='form-row'),
-            Submit('submit', 'Sign in'))
+            Submit('submit', 'Save Details'))
 
     class Meta:
          model = profile
-         fields = ['user','image','first_name','middle_name','last_name',
+         fields = ['image','first_name','middle_name','last_name',
                    'father_first_name','father_middle_name',
                    'father_last_name','address_lane1','address_lane2',
                    'state','ifsc_code','email','phone_number1','phone_number2',

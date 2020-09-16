@@ -3,6 +3,7 @@ from .forms import UserCreationForm,Userregisterform
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from .forms import profile_form
+from .models import profile
 
 # Create your views here.
 def home(request):
@@ -35,3 +36,9 @@ def profile(request):
     return render(request, "users/demo_profile.html", {
         "form": form
     })
+
+@login_required()
+def profile_view(request,profile_id):
+    from .models import profile
+    object = profile.objects.filter( pk = profile_id).first()
+    return render(request,"users/profile_view.html",{'object':object})
