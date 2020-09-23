@@ -1,0 +1,14 @@
+.value{
+    font-family : monospace;
+    font-size : 18px;
+    text-transform: capitalize;
+    }
+
+.header{
+    font-family : monospace;
+    font-size : 18px;
+
+
+    text-transform: capitalize;
+}
+

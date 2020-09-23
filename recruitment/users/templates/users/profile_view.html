@@ -2,68 +2,62 @@
 
 {% block body %}
 
-<!--<table class="table table-striped table-bordered table-sm">
-<thead class="thead-dark">
-<tr>
-    <th>First Name</th>
-</tr>
-</thead>
-</table>-->
+
 <p><u><strong>Personal Details</strong></u></p>
     <div class="form-row">
       <div class="form-group col-md-12 mb-0">
 
           <font class="font-weight-bolder text-monospace text-capitalize" > Profile Picture </font>
           <br>
-          <img src="/media/{{ object.image }}" height="200" width="325" alt="Profile pic not uploded">
+          <img src="/media/{{ object.image }}" class="rounded-circle   " alt="100x100" height="200px" width="215px" alt="Profile pic not uploded">
       </div>
     </div>
      <br>
     <div class="form-row">
       <div class="form-group col-md-4 mb-0">
-          <font class="font-weight-bolder text-monospace text-capitalize" > Firstname </font>  :- <font class="text-monospace text-capitalize  "> {{ object.first_name }} </font>
+          <font class="header" > Firstname </font>  :- <font class=" value "> {{ object.first_name }} </font>
 
       </div>
       <div class="form-group col-md-4 mb-0">
-        <font class="font-weight-bolder text-monospace text-capitalize" > Middlename </font>  :- <font class="text-monospace text-capitalize"> {{ object.middle_name }} </font>
+        <font class="header" > Middlename </font>  :- <font class="value"> {{ object.middle_name }} </font>
 
 
 
       </div>
       <div class="form-group col-md-4 mb-0">
-       <font class="font-weight-bolder text-monospace text-capitalize" > Lastname </font>  :- <font class="text-monospace text-capitalize"> {{ object.last_name }} </font>
+       <font class="header" > Lastname </font>  :- <font class="value"> {{ object.last_name }} </font>
 
 
       </div>
     </div>
     <div class="form-row">
       <div class="form-group col-md-4 mb-0">
-          <font class="font-weight-bolder text-monospace text-capitalize" >Father FirstName </font> :- <font class="text-monospace text-capitalize  "> {{ object.father_first_name }} </font>
+          <font class="header" >Father FirstName </font> :- <font class="value "> {{ object.father_first_name }} </font>
       </div>
       <div class="form-group col-md-4 mb-0">
-          <font class="font-weight-bolder text-monospace text-capitalize" >Father MiddleName </font> :- <font class="text-monospace text-capitalize  "> {{ object.father_middle_name }} </font>
+          <font class="header" >Father MiddleName </font> :- <font class="value "> {{ object.father_middle_name }} </font>
       </div>
       <div class="form-group col-md-4 mb-0">
-          <font class="font-weight-bolder text-monospace text-capitalize" > Father LastName </font>:-<font class="text-monospace text-capitalize  "> {{ object.father_last_name }}</font>
+          <font class="header" > Father LastName </font>:-<font class="value  "> {{ object.father_last_name }}</font>
       </div>
       <div class="form-group col-md-4 mb-0">
-          <font class="font-weight-bolder text-monospace text-capitalize" >Date of Birth </font> :- <font class="text-monospace text-capitalize  ">{{ object.date_of_birth }} </font>
+          <font class="header" >Date of Birth </font> :- <font class="value  ">{{ object.date_of_birth }} </font>
 
       </div>
       <div class="form-group col-md-4 mb-0">
-          <font class="font-weight-bolder text-monospace text-capitalize" > Joining Date </font> :- <font class="text-monospace text-capitalize  "> {{ object.joining_date }}</font>
+          <font class="header" > Joining Date </font> :- <font class="value "> {{ object.joining_date }}</font>
 
       </div>
       <div class="form-group col-md-4 mb-0">
-          <font class="font-weight-bolder text-monospace text-capitalize" > Resignation Date </font> :- <font class="text-monospace text-capitalize  ">  {{ object.resignation_date }}</font>
-
-      </div>
-        <div class="form-group col-md-4 mb-0">
-            <font class="font-weight-bolder text-monospace text-capitalize" > Adharcard Number </font> :- <font class="text-monospace text-capitalize  "> {{ object.adharcard_number }}</font>
+          <font class="header" > Resignation Date </font> :- <font class="value ">  {{ object.resignation_date }}</font>
 
       </div>
         <div class="form-group col-md-4 mb-0">
-            <font class="font-weight-bolder text-monospace text-capitalize" > Pan Number </font> :- <font class="text-monospace text-capitalize  "> {{ object.pan_number }} </font>
+            <font class="header" > Adharcard Number </font> :- <font class="value"> {{ object.adharcard_number }}</font>
+
+      </div>
+        <div class="form-group col-md-4 mb-0">
+            <font class="header" > Pan Number </font> :- <font class="value"> {{ object.pan_number }} </font>
        </div>
     </div>
     <br>
@@ -71,54 +65,54 @@
      <p><u><strong>Contact Details</strong></u></p>
     <div class="form-row">
 
-      <div class="form-group col-md-4 mb-0">
-         <font class="font-weight-bolder text-monospace text-capitalize" > Email Id </font> :- <font class="text-monospace text-capitalize  "> {{ object.email }} </font>
+      <div class="form-group col-md-6 mb-0">
+         <font class="header" > Email Id </font> :- <font class="value "> {{ object.email }} </font>
 
       </div>
       <div class="form-group col-md-4 mb-0">
-        <font class="font-weight-bolder text-monospace text-capitalize" > Phone Number1 </font> :- <font class="text-monospace text-capitalize  "> {{ object.phone_number1 }} </font>
+        <font class="header" > Phone Number1 </font> :- <font class="value"> {{ object.phone_number1 }} </font>
 
       </div>
       <div class="form-group col-md-4 mb-0">
-        <font class="font-weight-bolder text-monospace text-capitalize" > Phone Number2 </font> :- <font class="text-monospace text-capitalize  "> {{ object.phone_number2 }} </font>
+        <font class="header" > Phone Number2 </font> :- <font class="value"> {{ object.phone_number2 }} </font>
       </div>
 
     </div>
 <br>
 
  <p><u><strong>Address Details</strong></u></p>
-    <font class="font-weight-bolder text-monospace text-capitalize" > Address Lane1 </font> :- <font class="text-monospace text-capitalize  "> {{ object.address_lane1 }} </font>
+    <font class="header" > Address Lane1 </font> :- <font class="value "> {{ object.address_lane1 }} </font>
     <br>
-    <font class="font-weight-bolder text-monospace text-capitalize" > Address Lane2 </font> :- <font class="text-monospace text-capitalize  "> {{ object.address_lane2 }} </font>
+    <font class="header" > Address Lane2 </font> :- <font class="value  "> {{ object.address_lane2 }} </font>
     <br>
-    <font class="font-weight-bolder text-monospace text-capitalize" > Address Lane3 </font> :- <font class="text-monospace text-capitalize  "> {{ object.address_lane3 }} </font>
+    <font class="header" > Address Lane3 </font> :- <font class="value "> {{ object.address_lane3 }} </font>
     <div class="form-row">
       <div class="form-group col-md-4 mb-0">
-        <font class="font-weight-bolder text-monospace text-capitalize" > Country </font> :- <font class="text-monospace text-capitalize  "> {{ object.country }} </font>
+        <font class="header" > Country </font> :- <font class="value  "> {{ object.country }} </font>
       </div>
       <div class="form-group col-md-4 mb-0">
-        <font class="font-weight-bolder text-monospace text-capitalize" > State </font> :- <font class="text-monospace text-capitalize  "> {{ object.state }} </font>
+        <font class="header" > State </font> :- <font class="value "> {{ object.state }} </font>
       </div>
     </div>
 <br>
     <p><u><strong>Bank Details</strong></u></p>
     <div class="form-row">
       <div class="form-group col-md-4 mb-0">
-        <font class="font-weight-bolder text-monospace text-capitalize"> Bank Name </font> :- <font class="text-monospace text-capitalize  "> {{ object.bank_name }} </font>
+        <font class="header"> Bank Name </font> :- <font class="value "> {{ object.bank_name }} </font>
 
       </div>
       <div class="form-group col-md-4 mb-0">
-        <font class="font-weight-bolder text-monospace text-capitalize"> Bank Branch </font> :- <font class="text-monospace text-capitalize  "> {{ object.bank_branch }} </font>
+        <font class="header"> Bank Branch </font> :- <font class="value"> {{ object.bank_branch }} </font>
       </div>
       <div class="form-group col-md-4 mb-0">
-        <font class="font-weight-bolder text-monospace text-capitalize"> Account Number </font> :- <font class="text-monospace text-capitalize  "> {{ object.account_number }} </font>
+        <font class="header"> Account Number </font> :- <font class="value "> {{ object.account_number }} </font>
       </div>
       <div class="form-group col-md-4 mb-0">
-        <font class="font-weight-bolder text-monospace text-capitalize"> MICR Code </font> :- <font class="text-monospace text-capitalize  "> {{ object.micr_code }} </font>
+        <font class="header"> MICR Code </font> :- <font class="value "> {{ object.micr_code }} </font>
 
       </div>
       <div class="form-group col-md-4 mb-0">
-        <font class="font-weight-bolder text-monospace text-capitalize"> IFSC Code </font> :- <font class="text-monospace text-capitalize  "> {{ object.ifsc_code }} </font>
+        <font class="header"> IFSC Code </font> :- <font class="value "> {{ object.ifsc_code }} </font>
 
       </div>
     </div>
@@ -126,17 +120,14 @@
         <p><u><strong>Business Details</strong></u></p>
       <div class="form-row">
         <div class="form-gorup col-md-4 mb-0">
-          <font class="font-weight-bolder text-monospace text-capitalize"> BD </font> :- <font class="text-monospace text-capitalize  "> {{ object.bd }} </font>
+          <font class="header"> BD </font> :- <font class="value "> {{ object.bd }} </font>
 
         </div>
         <div class="form-group col-md-4 mb-0">
-          <font class="font-weight-bolder text-monospace text-capitalize"> Execution </font> :- <font class="text-monospace text-capitalize  "> {{ object.execution }} </font>
-
+          <font class="header"> Execution </font> :- <font class="value "> {{ object.execution }} </font>
         </div>
       </div>
-
     <br>
-
 
 
 {% endblock %}
