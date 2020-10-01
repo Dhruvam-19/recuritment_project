@@ -1,0 +1,75 @@
+{% extends 'company/home.html' %}
+{% load crispy_forms_tags %}
+{% block body %}
+<form action="{% url 'add_company' %}" method="post" >
+    {% csrf_token %}
+
+   <!-- {{ form.users.errors }}
+    {{ form.users|as_crispy_field }}
+-->
+    {{ form.company_name.errors }}
+    {{ form.company_name|as_crispy_field }}
+
+    {{ form.gst_number.errors }}
+    {{ form.gst_number|as_crispy_field }}
+
+    {{ form.type.errors }}
+    {{ form.type|as_crispy_field }}
+
+    {{ form.ho_address.errors }}
+    {{ form.ho_address|as_crispy_field }}
+
+    {{ form.plant_address.errors }}
+    {{ form.plant_address|as_crispy_field }}
+
+    {{ form.state.errors }}
+    {{ form.state|as_crispy_field }}
+
+    {{ form.country.errors }}
+    {{ form.country|as_crispy_field }}
+
+    {{ form.contact_person1_name.errors }}
+    {{ form.contact_person1_name|as_crispy_field }}
+
+    {{ form.contact_person1_number.errors }}
+    {{ form.contact_person1_number|as_crispy_field }}
+
+    {{ form.contact_person2_name.errors }}
+    {{ form.contact_person2_name|as_crispy_field }}
+
+    {{ form.contact_person2_number.errors }}
+    {{ form.contact_person2_number|as_crispy_field }}
+
+    {{ form.phone_number.errors }}
+    {{ form.phone_number|as_crispy_field }}
+
+    {{ form.date_of_signing.errors }}
+    {{ form.date_of_signing|as_crispy_field }}
+
+    {{ form.fees.errors }}
+    {{ form.fees|as_crispy_field }}
+
+    {{ form.replacement_period.errors }}
+    {{ form.replacement_period|as_crispy_field }}
+
+    {{ form.payment_term.errors }}
+    {{ form.payment_term|as_crispy_field }}
+
+    {{ form.validity_of_resume.errors }}
+    {{ form.validity_of_resume|as_crispy_field }}
+
+    {{ form.remarks.errors }}
+    {{ form.remarks|as_crispy_field }}
+
+    {{ form.current_status.errors }}
+    {{ form.current_status|as_crispy_field }}
+
+    {{ form.agreement1.errors }}
+    {{ form.agreement1|as_crispy_field }}
+
+    {{ form.agreement2.errors }}
+    {{ form.agreement2|as_crispy_field }}
+
+    <input type="submit">
+</form>
+{% endblock %}

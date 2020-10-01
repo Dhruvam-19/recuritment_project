@@ -25,9 +25,7 @@ def register(request):
 def profile(request):
     if request.method == 'POST':
         form = profile_form(request.POST,request.FILES,instance=request.user.profile)
-        print("inside post ")
         if form.is_valid():
-            print("Inside valid condition")
             form.save()
             return redirect("home")
     else:
@@ -42,3 +40,10 @@ def profile_view(request,profile_id):
     from .models import profile
     object = profile.objects.filter( pk = profile_id).first()
     return render(request,"users/profile_view.html",{'object':object})
+
+
+def index(request):
+    return render(request,"index.html")
+
+def auth_register(request):
+    return render(request,"auth-register.html")

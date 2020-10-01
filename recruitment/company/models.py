@@ -17,7 +17,7 @@ class Company(models.Model):
     contact_person2_number = models.CharField(max_length=12,blank=True, null=True)
     date_of_signing = models.DateField(blank=True, null=True)
     fees = models.IntegerField(blank=True, null=True)
-    replacement_perod = models.CharField(max_length=20,blank=True, null=True)
+    replacement_period = models.CharField(max_length=20,blank=True, null=True)
     payment_term = models.CharField(max_length=30,blank=True, null=True)
     validity_of_resume = models.CharField(max_length=30,blank=True, null=True)
     remarks = models.TextField(blank=True, null=True)
@@ -25,4 +25,3 @@ class Company(models.Model):
     current_status = models.CharField(max_length=20,blank=True, null=True)
     agreement1 = models.FileField(upload_to='company_agreement', null=True, blank=True)
     agreement2 = models.FileField(upload_to='other_agreement',blank=True, null=True)
-

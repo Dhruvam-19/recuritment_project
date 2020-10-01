@@ -81,3 +81,4 @@ class profile_form(forms.ModelForm):
                    'pan_number','account_number','micr_code','adharcard_number',
                    'execution','bd','agreement_document','document1',
                    'document2','document3']
+
