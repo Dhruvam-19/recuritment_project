@@ -4,9 +4,8 @@
 <form action="{% url 'add_company' %}" method="post" >
     {% csrf_token %}
 
-   <!-- {{ form.users.errors }}
-    {{ form.users|as_crispy_field }}
--->
+
+
     {{ form.company_name.errors }}
     {{ form.company_name|as_crispy_field }}
 
@@ -69,7 +68,10 @@
 
     {{ form.agreement2.errors }}
     {{ form.agreement2|as_crispy_field }}
-
+    <div>
+        <br>
     <input type="submit">
+    </div>
+        <br>
 </form>
 {% endblock %}

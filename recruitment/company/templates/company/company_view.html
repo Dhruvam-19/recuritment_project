@@ -1,0 +1,39 @@
+{% extends 'company/home.html' %}
+{% block body %}
+
+
+
+
+
+<table id="example">
+        <thead>
+            <th> Company Name</th>
+            <th> Company Type</th>
+            <th>Current Status</th>
+
+        </thead>
+        <tbody>
+
+
+
+        </tbody>
+    </table>
+
+<script>
+
+             $(document).ready(function() {
+            $('#example').DataTable({
+                "ajax": {
+                        "url": "user_company_view/{{ user.id }}",
+                        "dataType": "json"
+                },
+                 columns: [
+                            { data: 'company_name' },
+                            { data: 'type' },
+                            { data : 'current_status'}
+
+                        ]
+            });
+        } );
+    </script>
+{% endblock %}

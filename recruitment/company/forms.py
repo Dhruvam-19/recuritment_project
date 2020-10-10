@@ -42,7 +42,7 @@ class companyform(forms.ModelForm):
                 Column('agreement1', css_class='form-group col-md-6 mb-0'),
                 Column('agreement2', css_class='form-group col-md-6 mb-0'),
                 css_class='form-row'),
-            Submit('submit', 'Save Details')
+
 
         )
 
