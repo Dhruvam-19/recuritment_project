@@ -1,4 +1,5 @@
 import docx
+from docx2pdf import convert
 
 def generate_document(dict):
     doc=docx.Document('testing.docx')
@@ -53,4 +54,8 @@ def generate_document(dict):
     #save the document
     doc.save(company_name+'.docx')
 
-    return company_name+'.docx'
+    convert(company_name + '.docx')
+    convert(company_name + '.docx', company_name + '1' + '.pdf')
+
+    return company_name + '1' + '.pdf'
+

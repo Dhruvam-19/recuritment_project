@@ -1,7 +1,7 @@
-{% extends 'company/home.html' %}
+{% extends 'users/home.html' %}
 {% load crispy_forms_tags %}
 {% block body %}
-<form action="{% url 'add_company' %}" method="post" >
+<form  method="post" >
     {% csrf_token %}
 
 

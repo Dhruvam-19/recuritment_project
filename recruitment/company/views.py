@@ -5,13 +5,24 @@ from django.contrib.auth.decorators import login_required
 from .forms import companyform
 from .models import Company
 from . import word_document
+from django.views.generic import UpdateView
+
 # Create your views here.
+
+class Update_company(UpdateView):
+    model = Company
+    fields = ['company_name','gst_number','ho_address','plant_address','state',
+              'country','phone_number','contact_person1_name','contact_person2_name',
+              'contact_person1_number','contact_person2_number','date_of_signing',
+              'fees','replacement_period','payment_term','validity_of_resume',
+              'remarks','type','current_status','agreement1','agreement2']
+    template_name = 'company/add_company.html'
 
 def home(request):
     return render(request,"company/home.html")
 
 @login_required()
-def add_company(request):
+def add_new_company(request):
     if request.method == 'POST':
         form = companyform(request.POST)
         form.users = request.user;
@@ -33,8 +44,10 @@ def view_company(request):
     companylist=list(company)
     return JsonResponse({"data":companylist})
 
-def company_view(request):
-    return render(request, "company/company_view.html")
+def company_view(request,user_id):
+    from .models import Company
+    object = Company.objects.filter( users = user_id )
+    return render(request, "company/company_view.html",{'object':object})
 
 def user_company_view(request,user_id):
     from .models import Company
@@ -42,10 +55,12 @@ def user_company_view(request,user_id):
     objectlist = list(object)
     return JsonResponse({"data":objectlist})
 
-def generate_agreement(request):
-    object = Company.objects.get(id = 13)
+def generate_agreement(request,company_id):
+    import pythoncom
+    pythoncom.CoInitialize()
+    object = Company.objects.get(id = company_id)
     dict={}
-    dict.__setitem__("company_name",object.company_name)
+    dict.__setitem__("company_name",object.company_name.capitalize())
     dict.__setitem__("rate", object.fees)
     dict.__setitem__("date", object.date_of_signing)
     dict.__setitem__("payment_terms", object.payment_term)
@@ -54,3 +69,5 @@ def generate_agreement(request):
     object.agreement= word_document.generate_document(dict)
     object.save()
     return render(request,"company/home.html")
+
+    pythoncom.CoUninitialize()

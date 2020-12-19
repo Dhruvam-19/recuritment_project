@@ -2,7 +2,7 @@
 {% load crispy_forms_tags %}
 
 {% block body %}
-  <form method="post" enctype="multipart/form-data" action="{% url 'profile' %}">
+  <form method="post" enctype="multipart/form-data">
     {% csrf_token %}
     <p><u><strong>Personal Details</strong></u></p>
 
@@ -123,5 +123,8 @@
     <br>
 
     <br>
+        <div class="form-group">
+                <button class="btn btn-outline-info" type="submit" >Submit</button>
+            </div>
   </form>
 {% endblock %}

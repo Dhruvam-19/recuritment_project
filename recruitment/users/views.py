@@ -3,6 +3,7 @@ from .forms import UserCreationForm,Userregisterform
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from .forms import profile_form
+from django.views.generic import UpdateView
 from .models import profile
 
 # Create your views here.
@@ -22,7 +23,7 @@ def register(request):
     return render(request,"users/register.html",{"form":form})
 
 @login_required()
-def profile(request):
+def create_profile(request):
     if request.method == 'POST':
         form = profile_form(request.POST,request.FILES,instance=request.user.profile)
         if form.is_valid():
@@ -47,3 +48,14 @@ def index(request):
 
 def auth_register(request):
     return render(request,"auth-register.html")
+
+class ProfileUpdateView(UpdateView):
+    model = profile
+    fields = [ 'image','first_name','middle_name','last_name',
+               'father_first_name','father_middle_name','father_last_name',
+               'date_of_birth','joining_date','resignation_date','email',
+               'phone_number1','phone_number2','address_lane1','address_lane1','address_lane2',
+               'address_lane3','state','country','bank_name','bank_branch','pan_number',
+               'account_number','ifsc_code','micr_code','adharcard_number','document1','document2',
+               'document3','execution','bd','agreement_document']
+    template_name = "users/profile.html"

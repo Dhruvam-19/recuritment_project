@@ -1,5 +1,5 @@
 import docx
-
+from docx2pdf import convert
 doc=docx.Document('testing.docx')
 
 company_name="Bio matrix"
@@ -15,7 +15,7 @@ doc.paragraphs[4].add_run('\t\t\t'+company_name).bold=True
 #subject
 subject="\t SUBJECT: " \
         " AGREEMENT BETWEEN " \
-        + company_name +  \
+        + company_name.capitalize()  +  \
         " \n\t\t      AND RECRUITMENT HR EXPERTS (Division of RHE Career Movers Pvt Ltd)."
 
 
@@ -61,7 +61,7 @@ doc.paragraphs[32].runs[5].bold=True
 #For company in last
 for run,i in zip(doc.paragraphs[40].runs,range(0,len(doc.paragraphs[40].runs))):
     print(i, " =>" ,run.text)
-doc.paragraphs[40].runs[14].text=company_name
+doc.paragraphs[40].runs[14].text=company_name.capitalize()
 
 
 #save the document

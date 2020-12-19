@@ -1,7 +1,11 @@
-{% extends 'company/home.html' %}
+{% extends 'users/home.html' %}
 {% block body %}
 
-
+<script>
+    $(document).ready(function() {
+    $('#example').DataTable();
+} );
+</script>
 
 
 
@@ -10,30 +14,34 @@
             <th> Company Name</th>
             <th> Company Type</th>
             <th>Current Status</th>
+            <th>Generate agreement</th>
+            <th>Update Company</th>
 
         </thead>
         <tbody>
-
-
+            {% for element in object %}
+                <tr>
+                    <td>{{ element.company_name }} </td>
+                    <td> {{ element.type }} </td>
+                    <td> {{ element.current_status }} </td>
+                    <td>
+                        <button type="button" class="btn btn-dark">
+                            <a href="{% url 'generate_agreement' element.id  %}">
+                                Generate
+                            </a>
+                        </button>
+                    </td>
+                    <td>
+                        <button type="button" class="btn btn-dark">
+                            <a href="{% url 'update_company' element.id  %}">
+                                Update
+                            </a>
+                        </button>
+                    </td>
+                </tr>
+            {% endfor %}    
 
         </tbody>
     </table>
 
-<script>
-
-             $(document).ready(function() {
-            $('#example').DataTable({
-                "ajax": {
-                        "url": "user_company_view/{{ user.id }}",
-                        "dataType": "json"
-                },
-                 columns: [
-                            { data: 'company_name' },
-                            { data: 'type' },
-                            { data : 'current_status'}
-
-                        ]
-            });
-        } );
-    </script>
 {% endblock %}
