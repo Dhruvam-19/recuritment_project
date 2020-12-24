@@ -1,0 +1,60 @@
+{% extends 'users/home.html' %}
+{% block body %}
+
+<script>
+    $(document).ready(function() {
+    $('#example').DataTable( {
+        "pagingType": "full_numbers"
+    } );
+} );
+</script>
+
+<div class="container-fluid">
+
+        <table id="example" class="table  cell-border table-hover display compact"   style="width:100%">
+                <thead>
+                <tr>
+                    <th> Candidate Name</th>
+                    <th> Candidate Industry</th>
+                    <th> Candidate Location</th>
+                    <th> Education</th>
+                    <th> Profile Name</th>
+                    <th> Current Designation</th>
+                    <th> Current Organisation</th>
+                    <th> Mobile Number</th>
+                    <th> Email ID</th>
+                </tr>
+                </thead>
+                <tbody>
+                    {% for element in object %}
+                        <tr>
+                            <td> {{ element.candidate_name }} </td>
+                            <td> {{ element.industry }} </td>
+                            <td> {{ element.location }} </td>
+                            <td> {{ element.education }} </td>
+                            <td> {{ element.profile_name }} </td>
+                            <td> {{ element.current_designation}} </td>
+                            <td> {{ element.current_organisation }} </td>
+                            <td> {{ element.email_id }} </td>
+                            <td> {{ element.mobile_number }} </td>
+                        </tr>
+                    {% endfor %}
+
+                </tbody>
+                <tfoot>
+                    <tr>
+                    <th> Candidate Name</th>
+                    <th> Candidate Industry</th>
+                    <th> Candidate Location</th>
+                    <th> Education</th>
+                    <th> Profile Name</th>
+                    <th> Current Designation</th>
+                    <th> Current Organisation</th>
+                    <th> Mobile Number</th>
+                    <th> Email ID</th>
+                </tr>
+                </tfoot>
+        </table>
+
+</div>
+{% endblock %}

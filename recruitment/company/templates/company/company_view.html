@@ -7,41 +7,49 @@
 } );
 </script>
 
+<div class="container-fluid">
 
+    <table id="example" class="cell-border hover display compact"   style="width:100%">
+            <thead>
+                <th> Company Name</th>
+                <th> Company Type</th>
+                <th>Current Status</th>
+                <th>Generate agreement</th>
+                <th>Update Company</th>
+                <th>Delete Company</th>
 
-<table id="example">
-        <thead>
-            <th> Company Name</th>
-            <th> Company Type</th>
-            <th>Current Status</th>
-            <th>Generate agreement</th>
-            <th>Update Company</th>
+            </thead>
+            <tbody>
+                {% for element in object %}
+                    <tr>
+                        <td>{{ element.company_name }} </td>
+                        <td> {{ element.type }} </td>
+                        <td> {{ element.current_status }} </td>
+                        <td>
+                            <button type="button" class="btn btn-dark">
+                                <a style = "color:white" href="{% url 'generate_agreement' element.id  %}">
+                                    Generate
+                                </a>
+                            </button>
+                        </td>
+                        <td>
+                            <button type="button" class="btn btn-dark">
+                                <a style = "color:white" href="{% url 'update_company' element.id  %}">
+                                    Update
+                                </a>
+                            </button>
+                        </td>
+                        <td>
+                            <button type="button" class="text-white btn btn-danger ">
+                                <a style = "color:white" href="{% url 'delete_company' element.id  %}">
+                                    Delete Company
+                                </a>
+                            </button>
+                        </td>
+                    </tr>
+                {% endfor %}
 
-        </thead>
-        <tbody>
-            {% for element in object %}
-                <tr>
-                    <td>{{ element.company_name }} </td>
-                    <td> {{ element.type }} </td>
-                    <td> {{ element.current_status }} </td>
-                    <td>
-                        <button type="button" class="btn btn-dark">
-                            <a href="{% url 'generate_agreement' element.id  %}">
-                                Generate
-                            </a>
-                        </button>
-                    </td>
-                    <td>
-                        <button type="button" class="btn btn-dark">
-                            <a href="{% url 'update_company' element.id  %}">
-                                Update
-                            </a>
-                        </button>
-                    </td>
-                </tr>
-            {% endfor %}    
-
-        </tbody>
-    </table>
-
+            </tbody>
+        </table>
+</div>
 {% endblock %}

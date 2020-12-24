@@ -30,4 +30,5 @@ class Company(models.Model):
     def get_absolute_url(self):
         return reverse('company-home')
 
-
+    def __str__(self):
+        return f"{self.company_name}"

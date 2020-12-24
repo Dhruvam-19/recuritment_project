@@ -5,7 +5,7 @@ from django.contrib.auth.decorators import login_required
 from .forms import companyform
 from .models import Company
 from . import word_document
-from django.views.generic import UpdateView
+from django.views.generic import UpdateView,DeleteView
 
 # Create your views here.
 
@@ -18,8 +18,12 @@ class Update_company(UpdateView):
               'remarks','type','current_status','agreement1','agreement2']
     template_name = 'company/add_company.html'
 
+class delete_company(DeleteView):
+    model = Company
+    success_url = '/users/'
+
 def home(request):
-    return render(request,"company/home.html")
+    return render(request,"users/home.html")
 
 @login_required()
 def add_new_company(request):

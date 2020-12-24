@@ -24,6 +24,7 @@ urlpatterns = [
     path('',auth_views.LoginView.as_view(template_name='users/login.html'),name="login"),
     path('users/',include('users.urls')),
     path('company/',include('company.urls')),
+    path('candidate/',include('candidate.urls')),
 ] + static(settings.MEDIA_URL,document_root = settings.MEDIA_ROOT)
 
 #if settings.DEBUG:
